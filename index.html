@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input to Styled Box</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background: black;
+
+        }
+        .output-box {
+            background: #e3f2fd;
+            padding: 10px;
+            margin: 10px auto;
+            width: 50%;
+        }
+
+        .karachi:hover{
+            background-color: aqua;
+            color: black;
+            
+        }
+        .karachi{
+            color: #e3f2fd;
+        }
+
+        .dubai:hover{
+            background-color: aqua;
+        }
+        .islamabad:hover{
+            background-color: aqua;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="karachi">Type and Show Below</h1>
+    <input class="dubai" type="text" id="input-field" placeholder="Type something..." />
+    <button class="islamabad" onclick="addBox()">Show Below</button>
+    <div id="output-container"></div>
+
+    <script>
+        function addBox() {
+            const input = document.getElementById('input-field');
+            const text = input.value.trim();
+            const box = `<div class="output-box">${text}</div>`;
+            document.getElementById('output-container').innerHTML += box;
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
